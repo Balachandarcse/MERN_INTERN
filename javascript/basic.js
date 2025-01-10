@@ -34,10 +34,24 @@ console.log(set.values());
 set.forEach(value => console.log(value));
 
 for(let i in obj){
-    console.log(i,obj[i]);// i is key here in for in loop
+    console.log(i,obj[i]);//here i is key in for in loop
     console.log(i,obj.i);//access with dot operator gives undefined
 }
 arr=[1,2,3,4,5]
 for(let i in arr){
-    console.log(i)//i is index here in for in loop
+    console.log(i)//here i is index in for in loop
+}
+//for in loop can't be used in set
+for(let i of arr){
+    console.log(i);//here i is element in for of loop
+}
+
+for(let i of Object.values(obj)){
+    console.log(i);
+}
+for(let i of Object.keys(obj)){
+    console.log(i);
+}
+for(let [i,j] of Object.entries(obj)){
+    console.log(i,j);
 }
