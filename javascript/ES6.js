@@ -52,7 +52,7 @@ console.log(con)
 //     console.log(arg)
 // }
 // restOpEg(10,20,30,40,50,...b)
-
+    
 // 8. Destructing Operator
 // var array = [10,20,30]
 // var [a,b,c,d] = array
