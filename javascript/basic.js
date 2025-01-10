@@ -32,3 +32,12 @@ console.log(typeof(set));
 console.log(set);
 console.log(set.values());
 set.forEach(value => console.log(value));
+
+for(let i in obj){
+    console.log(i,obj[i]);// i is key here in for in loop
+    console.log(i,obj.i);//access with dot operator gives undefined
+}
+arr=[1,2,3,4,5]
+for(let i in arr){
+    console.log(i)//i is index here in for in loop
+}
