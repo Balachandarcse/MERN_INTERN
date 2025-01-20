@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Contact(){
-    var [val,fun]=useState(78);
+    var [val,fun]=useState(78);//value and dispatch-funtions are two things given by useState()
     return (
         <div>
             <h1>contact page</h1>
