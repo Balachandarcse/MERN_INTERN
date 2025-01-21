@@ -1,8 +1,21 @@
 
-
+header{
+  padding: 5px;
+  background-color: aqua;
+}
   nav ul{
+    
+    text-decoration: none;
     list-style-type: none;
     display: flex;
     justify-content: space-around;
 
   }
+.link{
+  text-decoration: none;
+  padding: 3px;
+}
+
+.link:hover{
+  background-color: antiquewhite;
+}
