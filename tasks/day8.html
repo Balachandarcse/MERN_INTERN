@@ -10,6 +10,12 @@
         <h3>
             why whitespaces are not getting printed in the paragraph tag?
         </h3>
+        <p>Why Are Multiple Whitespaces Collapsed?
+            HTML treats sequences of multiple spaces, tabs, and newlines as a single space. This is part of its design to handle whitespace consistently across browsers.
+            CSS white-space: normal:
+            By default, most elements have the white-space property set to normal. This causes:
+            Multiple spaces to collapse into one.
+            Line breaks to wrap text normally.</p>
     </div>
     <div>
         <h3>how the function get the event and the target area in the given example?
@@ -17,6 +23,12 @@
                 setText(event.target.value)
             }
         </h3>
+        <p>When the function handelText is triggered (e.g., via an input field's onChange event), the browser automatically passes an event object to the function.
+            The event object contains information about the event that occurred, such as:
+            The type of event (change, click, etc.).
+            The target property of the event object refers to the DOM element that triggered the event.
+            The value property of event.target holds the current value of the input field (or any other form control) that triggered the event.
+        </p>
     </div>
     <div>
         <h3>signup page and login page should be created and the initial route should be these pages,
@@ -24,6 +36,15 @@
     </div>
     <div>
         <h3>how the Link component is converted to anchor tag and how classname is converted into class while inspecting the page</h3>
+        <p>The Link component, when used in React (via react-router-dom), is not directly rendered as an anchor tag (<a>). 
+            It uses React's JSX transformation to map to a real HTML <a> tag in the final rendered output.
+            Internally, Link is a React component that uses React.createElement() (or JSX's React.createElement under the hood) to create an element.
+            The Link component doesn't directly output the href attribute but outputs the to attribute,
+            which is later converted into href.
+            
+            React uses className in JSX because class is a reserved keyword in JavaScript,
+             but when React updates the actual DOM,
+             it converts className into the class attribute, using standard DOM APIs like setAttribute().</p>
     </div>
 </body>
 </html>
