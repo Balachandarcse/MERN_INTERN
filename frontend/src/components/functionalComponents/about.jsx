@@ -1,4 +1,5 @@
 import { useState } from "react"
+import NavBar from "./navBar";
 
 const About=()=>{
     var [text,setText]=useState("yooooo!");
@@ -8,6 +9,7 @@ const About=()=>{
     return (
        
         <>
+        <NavBar/>
         <h1>hi</h1>
         <h2>this is about section</h2>
         {/* <textarea value={text} onChange={()=>setText()}/> */}
