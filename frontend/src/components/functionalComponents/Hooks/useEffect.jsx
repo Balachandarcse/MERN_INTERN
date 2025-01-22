@@ -1,8 +1,11 @@
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 import NavBar from "../navBar"
 
 const UseEffect=()=>{
     var [text,setText]=useState("")
+    useEffect(()=>{
+        console.log(text)
+    },[text])
     return (
         
         <div>

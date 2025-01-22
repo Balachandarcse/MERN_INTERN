@@ -19,6 +19,7 @@ const NavBar=()=>{
                         </div>
                         <li><Link to='/gallery' className="link">gallery</Link></li>
                         <li><Link to='/use-effect' className="link">use-effect</Link></li>
+                        <li><Link to='/use-effect-api' className="link">use-effect-api</Link></li>
                         <li><Link to='/contact' className="link">contact</Link></li>
                         <li><Link to='/' className="link" >SignUp</Link></li>
                     </ul>
