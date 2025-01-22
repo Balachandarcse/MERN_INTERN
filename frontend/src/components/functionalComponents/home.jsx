@@ -6,7 +6,7 @@ function Home(){
         <div>
             <NavBar/>
             <h1>hello</h1>
-            <UseState/>
+            <h2>this is home page</h2>
         </div>
     )
 }

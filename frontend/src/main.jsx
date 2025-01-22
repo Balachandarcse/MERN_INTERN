@@ -12,6 +12,7 @@ import Signup from './components/functionalComponents/signUp.jsx'
 import UseState from './components/functionalComponents/Hooks/useState.jsx'
 import UseEffect from './components/functionalComponents/Hooks/useEffect.jsx'
 import UseEffectApi from './components/functionalComponents/Hooks/useEffectApi.jsx'
+import UseReducer from './components/functionalComponents/Hooks/useReducer.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -24,6 +25,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/usestate" element={<UseState/>}></Route>
       <Route path="/use-effect" element={<UseEffect/>}></Route>
       <Route path="/use-effect-api" element={<UseEffectApi/>}></Route>
+      <Route path="/use-reducer" element={<UseReducer/>}></Route>
     </Routes>
     
     </BrowserRouter>

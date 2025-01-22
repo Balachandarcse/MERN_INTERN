@@ -1,21 +1,23 @@
 import { useState } from "react"
+import NavBar from "../navBar"
 
 var UseState= ()=>{
     var initialVal=10
-    var [a,b]=useState(initialVal)
+    var [num,setNum]=useState(initialVal)
     return (
         <div>
+            <NavBar/>
             <h1>this is example for useState</h1>
-            <h2>this is the value : {a}</h2>
+            <h2>this is the value : {num}</h2>
             <button onClick={()=>{
-                b(a++)
-            }}>increament</button>
+                setNum(num++)
+            }}>increment</button>
             <button onKeyDown={()=>{
-                b(a--)
-            }}>increament</button>
+                setNum(num--)
+            }}>decrement</button>
             <button onDoubleClick={()=>{
-                b(initialVal)
-            }}>increament</button>
+                setNum(initialVal)
+            }}>reset</button>
         </div>
 
     )

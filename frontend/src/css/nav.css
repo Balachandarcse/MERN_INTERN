@@ -19,3 +19,32 @@ header{
 .link:hover{
   background-color: antiquewhite;
 }
+.dropdown {
+  position: relative;
+}
+
+.hooks {
+  display: none;
+  position: absolute;
+  top: 100%; 
+  left: 7px;
+  background-color: #f4d0d0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.hooks .link {
+  display: block;
+  padding: 5px 10px;
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown:hover .hooks {
+  display: block;
+}
+
+.hooks .link:hover {
+  background-color: #88d1f0;
+}
