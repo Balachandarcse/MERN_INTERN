@@ -1,3 +1,4 @@
+import UseState from "./Hooks/useState"
 import NavBar from "./navBar"
 
 function Home(){
@@ -5,6 +6,7 @@ function Home(){
         <div>
             <NavBar/>
             <h1>hello</h1>
+            <UseState/>
         </div>
     )
 }
