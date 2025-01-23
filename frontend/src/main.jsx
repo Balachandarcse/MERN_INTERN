@@ -1,12 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import Home from './components/functionalComponents/home.jsx'
 import About from './components/functionalComponents/about.jsx'
-import ClassComponent from './components/classComponents/eg.jsx'
 import Gallery from './components/functionalComponents/gallary.jsx'
 import Contact from './components/functionalComponents/contact.jsx'
-import NavBar from './components/functionalComponents/navBar.jsx'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Signup from './components/functionalComponents/signUp.jsx'
 import UseState from './components/functionalComponents/Hooks/useState.jsx'
@@ -16,7 +13,6 @@ import UseReducer from './components/functionalComponents/Hooks/useReducer.jsx'
 import UseEffectApiImage from './components/functionalComponents/Hooks/useEffectApiimage.jsx'
 import UseRef from './components/functionalComponents/Hooks/useRef.jsx'
 import UseMemo from './components/functionalComponents/Hooks/useMemo.jsx'
-import UseReducerEX from './components/functionalComponents/Hooks/useReducerEX.jsx'
 import UseCallBack from './components/functionalComponents/Hooks/useCallback.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -34,7 +30,6 @@ createRoot(document.getElementById('root')).render(
       <Route path="/use-reducer" element={<UseReducer/>}></Route>
       <Route path="/use-ref" element={<UseRef/>}></Route>
       <Route path='/use-memo' element={<UseMemo/>}></Route>
-      <Route path='/use-reducer-ex' element={<UseReducerEX/>}></Route>
       <Route path='/use-callback' element={<UseCallBack/>}></Route>
     </Routes>
     
