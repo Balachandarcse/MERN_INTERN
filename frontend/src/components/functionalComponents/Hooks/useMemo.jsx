@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react"
 import NavBar from "../navBar";
 
-var slowfunction=(num)=>{
+var slowfunc=(num)=>{
     for(var slow=0;slow<100000;slow++){}
     return num*2;
 }
@@ -13,7 +13,7 @@ const UseMemo = ()=>{
         color: dark ? "white" : "black"
     }
     var doublingNum = useMemo(()=>{
-        return slowfunction(num)
+        return slowfunc(num)
     },[num])
     return(
         <div>

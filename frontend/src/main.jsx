@@ -17,6 +17,7 @@ import UseEffectApiImage from './components/functionalComponents/Hooks/useEffect
 import UseRef from './components/functionalComponents/Hooks/useRef.jsx'
 import UseMemo from './components/functionalComponents/Hooks/useMemo.jsx'
 import UseReducerEX from './components/functionalComponents/Hooks/useReducerEX.jsx'
+import UseCallBack from './components/functionalComponents/Hooks/useCallback.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -34,6 +35,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/use-ref" element={<UseRef/>}></Route>
       <Route path='/use-memo' element={<UseMemo/>}></Route>
       <Route path='/use-reducer-ex' element={<UseReducerEX/>}></Route>
+      <Route path='/use-callback' element={<UseCallBack/>}></Route>
     </Routes>
     
     </BrowserRouter>
