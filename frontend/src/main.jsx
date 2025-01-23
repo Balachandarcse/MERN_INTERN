@@ -13,6 +13,10 @@ import UseState from './components/functionalComponents/Hooks/useState.jsx'
 import UseEffect from './components/functionalComponents/Hooks/useEffect.jsx'
 import UseEffectApi from './components/functionalComponents/Hooks/useEffectApi.jsx'
 import UseReducer from './components/functionalComponents/Hooks/useReducer.jsx'
+import UseEffectApiImage from './components/functionalComponents/Hooks/useEffectApiimage.jsx'
+import UseRef from './components/functionalComponents/Hooks/useRef.jsx'
+import UseMemo from './components/functionalComponents/Hooks/useMemo.jsx'
+import UseReducerEX from './components/functionalComponents/Hooks/useReducerEX.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -25,7 +29,11 @@ createRoot(document.getElementById('root')).render(
       <Route path="/usestate" element={<UseState/>}></Route>
       <Route path="/use-effect" element={<UseEffect/>}></Route>
       <Route path="/use-effect-api" element={<UseEffectApi/>}></Route>
+      <Route path="/use-effect-Image" element={<UseEffectApiImage/>}></Route>
       <Route path="/use-reducer" element={<UseReducer/>}></Route>
+      <Route path="/use-ref" element={<UseRef/>}></Route>
+      <Route path='/use-memo' element={<UseMemo/>}></Route>
+      <Route path='/use-reducer-ex' element={<UseReducerEX/>}></Route>
     </Routes>
     
     </BrowserRouter>

@@ -48,3 +48,16 @@ header{
 .hooks .link:hover {
   background-color: #88d1f0;
 }
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+.items-of-grid{
+  height: 200px;
+  width:200px;
+}
+.items-of-grid img{
+  height: 200px;
+  width:200px;
+}

@@ -15,6 +15,10 @@ const NavBar=()=>{
                             <li><Link to='/use-effect' className="link">use-effect</Link></li>
                             <li><Link to='/use-effect-api' className="link">use-effect-api</Link></li>
                             <li><Link to='/use-reducer' className="link">useReducer</Link></li>
+                            <li><Link to='/use-effect-Image' className="link">use-effect-image</Link></li>
+                            <li><Link to='/use-ref' className="link">use-ref</Link></li>
+                            <li><Link to='/use-memo' className="link">use-memo</Link></li>
+                            <li><Link to='/use-reducer-ex' className="link">use-reducer-ex</Link></li>
                             </div>
                         </li>
                         
