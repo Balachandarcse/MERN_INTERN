@@ -11,6 +11,7 @@ const NavBar=()=>{
                         <li className="dropdown">
                             <span className="link">Hooks</span>
                             <div className="hooks">
+                            <li><Link to='/react-lcm' className="link">React-life-cycle</Link></li>
                             <li><Link to='/usestate' className="link">useState</Link></li>
                             <li><Link to='/use-effect' className="link">use-effect</Link></li>
                             <li><Link to='/use-effect-api' className="link">use-effect-api</Link></li>
