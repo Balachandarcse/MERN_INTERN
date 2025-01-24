@@ -15,6 +15,9 @@ import UseRef from './components/functionalComponents/Hooks/useRef.jsx'
 import UseMemo from './components/functionalComponents/Hooks/useMemo.jsx'
 import UseCallBack from './components/functionalComponents/Hooks/useCallback.jsx'
 import ReactLifecycleMethods from './components/classComponents/react-life-cycle.jsx'
+import Usecontext from './components/functionalComponents/Hooks/usecontext.jsx'
+import Memo from './components/Memoization/Memo.jsx'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -33,6 +36,8 @@ createRoot(document.getElementById('root')).render(
       <Route path='/use-memo' element={<UseMemo/>}></Route>
       <Route path='/use-callback' element={<UseCallBack/>}></Route>
       <Route path='/react-lcm' element={<ReactLifecycleMethods/>}></Route>
+      <Route path='/use-context' element={<Usecontext/>}></Route>
+      <Route path='/memo' element={<Memo/>}></Route>
     </Routes>
     
     </BrowserRouter>
