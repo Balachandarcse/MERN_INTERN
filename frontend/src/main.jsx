@@ -17,6 +17,9 @@ import UseCallBack from './components/functionalComponents/Hooks/useCallback.jsx
 import ReactLifecycleMethods from './components/classComponents/react-life-cycle.jsx'
 import Usecontext from './components/functionalComponents/Hooks/usecontext.jsx'
 import Memo from './components/Memoization/Memo.jsx'
+import LazyLoading from './components/Memoization/LazyLodingAndSuspense.jsx'
+import UseLocalStorage from './components/functionalComponents/customHooks/useLocalStorage.jsx'
+import HoC from './components/functionalComponents/HOC/hoc.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -38,6 +41,9 @@ createRoot(document.getElementById('root')).render(
       <Route path='/react-lcm' element={<ReactLifecycleMethods/>}></Route>
       <Route path='/use-context' element={<Usecontext/>}></Route>
       <Route path='/memo' element={<Memo/>}></Route>
+      <Route path='/lazy' element={<LazyLoading/>}></Route>
+      <Route path='/customHook' element={<UseLocalStorage/>}></Route>
+      <Route path='/hoc' element={<HoC/>}></Route>
     </Routes>
     
     </BrowserRouter>

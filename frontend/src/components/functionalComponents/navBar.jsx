@@ -27,6 +27,7 @@ const NavBar=()=>{
                             <span className="link">Memoization</span>
                             <div className="hooks">
                             <li><Link to='/memo' className="link">React.Memo</Link></li>
+                            <li><Link to='/lazy' className="link">Lazy,Suspense</Link></li>
                             </div>
                         </li>
                         
