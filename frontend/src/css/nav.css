@@ -23,7 +23,7 @@ header{
   position: relative;
 }
 
-.hooks {
+.dropDownContent {
   display: none;
   position: absolute;
   top: 100%; 
@@ -34,18 +34,18 @@ header{
   border-radius: 4px;
 }
 
-.hooks .link {
+.dropDownContent .link {
   display: block;
   padding: 5px 10px;
   color: black;
   text-decoration: none;
 }
 
-.dropdown:hover .hooks {
+.dropdown:hover .dropDownContent {
   display: block;
 }
 
-.hooks .link:hover {
+.dropDownContent .link:hover {
   background-color: #88d1f0;
 }
 .grid{

@@ -1,3 +1,4 @@
+import NavBar from "../navBar";
 import useLocalStorage from "./customHookEg";
 
 const UseLocalStorage = () => {
@@ -5,6 +6,7 @@ const UseLocalStorage = () => {
   var [pass, setPass] = useLocalStorage("password","");
   return (
     <div>
+      <NavBar/>
       <h2>Custom Hook example Created</h2>
       CustomerID:<input
         type="text"

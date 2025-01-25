@@ -20,6 +20,7 @@ import Memo from './components/Memoization/Memo.jsx'
 import LazyLoading from './components/Memoization/LazyLodingAndSuspense.jsx'
 import UseLocalStorage from './components/functionalComponents/customHooks/useLocalStorage.jsx'
 import HoC from './components/functionalComponents/HOC/hoc.jsx'
+import ApiData from './components/functionalComponents/customHooks/fectdata.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -44,6 +45,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/lazy' element={<LazyLoading/>}></Route>
       <Route path='/customHook' element={<UseLocalStorage/>}></Route>
       <Route path='/hoc' element={<HoC/>}></Route>
+      <Route path='/custom-useApi-hook' element={<ApiData/>}></Route>
     </Routes>
     
     </BrowserRouter>
