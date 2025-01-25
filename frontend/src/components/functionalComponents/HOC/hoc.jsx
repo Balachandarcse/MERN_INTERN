@@ -1,5 +1,5 @@
 import NavBar from "../navBar";
-import Button from "./Button";
+import Button from "./button"
 import trackButtonComp from "./TrackButtonComp";
 const HoC =()=>{
     const ButtonWithTracking=trackButtonComp(Button)
