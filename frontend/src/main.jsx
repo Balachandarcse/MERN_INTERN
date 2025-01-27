@@ -21,12 +21,14 @@ import LazyLoading from './components/Memoization/LazyLodingAndSuspense.jsx'
 import UseLocalStorage from './components/functionalComponents/customHooks/useLocalStorage.jsx'
 import HoC from './components/functionalComponents/HOC/hoc.jsx'
 import ApiData from './components/functionalComponents/customHooks/fectdata.jsx'
+import Login from './components/functionalComponents/login.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Signup/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/home" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
       <Route path="/gallery" element={<Gallery/>}></Route>

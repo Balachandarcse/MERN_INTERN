@@ -4,10 +4,14 @@ const Signup=()=>{
     return (
     
         <div className="signup">
-            <form>
+            <form method="post" action="http://localhost:3001/signup">
+            <div className="input">
+                    <label htmlFor="name">firstName</label>
+                    <input type="text" name="firstname" placeholder="enter your firstname" required/>
+                </div>
                 <div className="input">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" placeholder="enter your name" required/>
+                    <label htmlFor="name">lastName</label>
+                    <input type="text" name="lastname" placeholder="enter your lastnamename" required/>
                 </div>
                 <div className="input">
                     <label htmlFor="email">Email</label>
@@ -17,7 +21,9 @@ const Signup=()=>{
                     <label htmlFor="password">Password</label>
                     <input type="text" name="password" placeholder="enter your password" required/>
                 </div>
-                <Link to='/home' className="btn">Submit</Link>
+                <button>submit</button>
+                <Link to='/home' className="btn" >Submit</Link>
+                <Link to='/login' className="btn">Login?</Link>
             </form>
         </div>
         
