@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import "../../css/signUp.css"
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ const Login = () => {
     };
 
     return (
-        <div className="login">
+        <div className="signup">
             <h2>Login Page</h2>
             <form onSubmit={handleSubmit}>
                 <div className="input">
@@ -46,7 +46,7 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button type="submit">Login</button>
+                <button type="submit" className="btn">Login</button>
             </form>
         </div>
     );
