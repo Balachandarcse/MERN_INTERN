@@ -4,9 +4,10 @@ const mdb=require("mongoose")
 const dotenv=require("dotenv")
 const Signup=require("./models/signupSchema")
 const bcrypt=require("bcrypt")
+const cors=require("cors")
 const app=express()
 dotenv.config();
-
+app.use(cors());
 app.use(express.urlencoded());
 app.use(express.json())
 mdb.connect(process.env.MONGODB_URL).then(()=>{
@@ -54,12 +55,12 @@ app.post("/login", async (req, res) => {
         if (!user) {
             return res.status(404).json({ message: "User not found" });
         }
-        const user_password=user.password;
-        if (password!=user_password) {
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
             return res.status(401).json({ message: "Invalid password" });
         }
         
-        res.status(200).json({ message: "Login successful", user });
+        res.status(201).json({ message: "Login successful", user });
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });

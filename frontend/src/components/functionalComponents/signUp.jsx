@@ -1,29 +1,54 @@
-import { Link } from "react-router-dom"
-import "../../css/signUp.css"
+import { useState } from "react"
+import axios from 'axios'
+import { Link, useNavigate } from "react-router-dom";
 const Signup=()=>{
+    const [firstname,setFirstname]=useState("");
+    const [lastname,setLastname]=useState("");
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const navigator=useNavigate()
+    const handleSubmit=async (e)=>{
+        e.preventDefault();
+        try{
+            const req= await axios.post("http://localhost:3001/signup",{
+                firstname:firstname,
+                lastname:lastname,
+                email:email,
+                password:password
+            })
+            console.log(req.data)
+            navigator('/login')
+        }catch(err){
+            console.log(err);
+        }
+
+    }
+
     return (
     
         <div className="signup">
-            <form method="post" action="https://mern-intern-backend.onrender.com/signup">
+            <h2>SignUp page</h2>
+            <form onSubmit={handleSubmit}>
             <div className="input">
                     <label htmlFor="name">firstName</label>
-                    <input type="text" name="firstname" placeholder="enter your firstname" required/>
+                    <input type="text" name="firstname" onChange={(event)=>setFirstname(event.target.value)} placeholder="enter your firstname" required/>
                 </div>
                 <div className="input">
                     <label htmlFor="name">lastName</label>
-                    <input type="text" name="lastname" placeholder="enter your lastname" required/>
+                    <input type="text" name="lastname" onChange={(event)=>setLastname(event.target.value)} placeholder="enter your lastname" required/>
                 </div>
                 <div className="input">
                     <label htmlFor="email">Email</label>
-                    <input type="text" name="email" placeholder="enter your email" required/>
+                    <input type="text" name="email" onChange={(event)=>setEmail(event.target.value)} placeholder="enter your email" required/>
                 </div>
                 <div className="input">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" placeholder="enter your password" required/>
+                    <input type="password" name="password"onChange={(event)=>setPassword(event.target.value)} placeholder="enter your password" required/>
                 </div>
                 <button>Submit</button>
-                <Link to='/login' className="btn">Login?</Link>
             </form>
+            <Link to="/login">already have a account?</Link>
+
         </div>
         
     )
