@@ -3,6 +3,7 @@ const path=require('path')
 const mdb=require("mongoose")
 const dotenv=require("dotenv")
 const Signup=require("./models/signupSchema")
+const bcrypt=require("bcrypt")
 const app=express()
 dotenv.config();
 
@@ -11,7 +12,7 @@ app.use(express.json())
 mdb.connect(process.env.MONGODB_URL).then(()=>{
     console.log("connected successfully")
 }).catch((err)=>{
-    console.log("not connected")
+    console.log(err)
 })
 
 app.get('/',(req,res)=>{
@@ -25,21 +26,23 @@ app.get('/newPath2',(req,res)=>{
     res.json({"key":"index.html"});
 })
 
-app.post("/signup", (req,res)=>{
+app.post("/signup", async(req,res)=>{
     const {firstname,lastname,email,password}=req.body;
+    var hashedPassword=await bcrypt.hash(password,10);
     try{
         const newCustomer=new Signup({
         firstname:firstname,
         lastname:lastname,
         email:email,
-        password:password
+        password:hashedPassword
     });
     newCustomer.save();
-    res.status(201).send("yooo!")
+    res.status(201).send("yooo!");
     console.log("value recived")
 }catch(e){
     res.status(401).send("yooo!")
     console.log("unSuccessful")
+
 }
 })
 app.post("/login", async (req, res) => {
@@ -63,7 +66,11 @@ app.post("/login", async (req, res) => {
     }
 });
 
-
+app.post("/update",async(req,res)=>{
+    const user=await Signup.findOneAndUpdate({firstname:"luffy"},{$set:{firstname:"Monkey D Luffy"}});
+    res.json("record updated");
+    user.save();
+});
 app.listen(3001,()=>{
     console.log("server is started");
     

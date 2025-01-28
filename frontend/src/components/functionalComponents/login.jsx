@@ -4,7 +4,7 @@ const Login=()=>{
     return (
     
         <div className="signup">
-            <form method="post" action="http://localhost:3001/login">
+            <form method="post" action="https://mern-intern-backend.onrender.com/login">
                 <div className="input">
                     <label htmlFor="email">Email</label>
                     <input type="text" name="email" placeholder="enter your email" required/>
