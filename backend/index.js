@@ -5,7 +5,10 @@ const dotenv=require("dotenv")
 const Signup=require("./models/signupSchema")
 const bcrypt=require("bcrypt")
 const cors=require("cors")
+const jwt=require("jsonwebtoken")
+
 const app=express()
+
 dotenv.config();
 app.use(cors());
 app.use(express.urlencoded());
@@ -23,8 +26,21 @@ app.get('/newPath',(req,res)=>{
     res.sendFile(path.join(__dirname,"index.html"));
 })
 
-app.get('/newPath2',(req,res)=>{
-    res.json({"key":"index.html"});
+const verifyToken=(req,res,next)=>{
+    var token=req.heders.authorization
+    if(!token){
+        res.status(401).send("request denied")
+    }
+    try{
+        const user = jwt.verify(token,process.env.SECRET_KEY);
+        req.user=user;
+    }catch(err){
+        res.status(400).send("token error")
+    }
+    next()
+}
+app.get('/json',verifyToken,(req,res)=>{
+    res.json({message:"this is middleware check",user:req.user});
 })
 
 app.post("/signup", async(req,res)=>{
@@ -53,14 +69,17 @@ app.post("/login", async (req, res) => {
         const user = await Signup.findOne({ email });
 
         if (!user) {
-            return res.status(404).json({ message: "User not found" });
+            return res.status(404).json({ message: "User not found" ,isvalid:false});
         }
         const isMatch = await bcrypt.compare(password, user.password);
+        const payload={email:user.email}
+        const token=jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:"1hr"});
+        console.log(token);
         if (!isMatch) {
-            return res.status(401).json({ message: "Invalid password" });
+            return res.status(401).json({ message: "Invalid password" ,isvalid:false});
         }
         
-        res.status(201).json({ message: "Login successful", user });
+        res.status(201).json({ message: "Login successful", user,isvalid:true ,token:token});
     } catch (error) {
         console.error(error);
         res.status(500).json({ message: "Internal server error" });

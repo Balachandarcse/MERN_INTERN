@@ -16,7 +16,12 @@ const Login = () => {
             });
 
             console.log(response.data);
-            alert("Login Successful!");
+            if(response.data.isvalid){
+                alert("Login Successful!");
+            }
+            else{
+                alert("login unsuccessful")
+            }
         } catch (err) {
             alert("Invalid email or password!");
         }
